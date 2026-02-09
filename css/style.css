@@ -1,0 +1,976 @@
+/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .visually-hidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * The use of `table` rather than `block` is only necessary if using
+ * `::before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+/*
+---------------------------------------------------------------------------------------------------------------------------------------
+
+     ------------------------ AQUÍ EMPIEZA EL PROYECTO ------------------------ 
+
+---------------------------------------------------------------------------------------------------------------------------------------
+*/
+/* ------------------------ RESET ------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  line-height: 1.5;
+  color: #151515;
+}
+
+@font-face {
+  font-family: 'Big Shoulders Display';
+  src: url('../fonts/BigShouldersDisplay-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* ------------------------ VARIABLES ------------------------ */
+
+:root {
+  --black: #151515;
+  --white: #ffffff;
+  --gold: #d5966c;
+  --gray: #444444;
+
+  --padding-mobile: 1rem;
+  --padding-tablet: 1.5rem;
+  --padding-desktop: 3rem;
+}
+
+/* ------------------------ GENERAL ------------------------ */
+
+main > section:not(.hero) {
+  padding-inline: var(--padding-mobile);
+}
+
+h1, h2, h3 {
+  font-family: 'Big Shoulders Display', sans-serif;
+  font-weight: 900;
+  line-height: 0.9;
+}
+
+p {
+  font-family: "Outfit";
+  font-weight: 300;
+  font-size: 1.1rem;
+}
+
+/* ------------------------ BUTTON ------------------------ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 0.875rem;
+}
+
+.btn__text {
+  font-family: "Big Shoulders";
+  font-size: 1.25rem;
+  padding: 1.25rem 2rem;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.btn__arrow {
+  padding: 1.25rem;
+  background-color: var(--gold);
+}
+
+.btn__text,
+.btn__arrow {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+}
+
+.btn__arrow img {
+  width: 8.5px;
+}
+
+.btn--left .btn__arrow img {
+  transform: rotate(180deg);
+}
+
+.btn:hover .btn__text {
+  background-color: var(--gold);
+  color: var(--black);
+}
+
+.btn:hover .btn__arrow {
+  background-color: var(--black);
+}
+
+/* ------------------------ HERO ------------------------ */
+
+.landing img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero > *:not(.landing){
+  padding-inline: var(--padding-mobile);
+  margin-right: 1rem;
+}
+
+.hero figure {
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  margin-bottom: 2rem;
+  color: var(--gray);
+  font-size: 1.2rem;
+}
+
+/* ------------------------ GALLERY (MOBILE) ------------------------ */
+
+.gallery {
+  display: grid;
+  gap: 1.5rem;
+  padding-block: 3rem;
+  padding-inline: 1.5rem;
+  padding-right: 1.5rem;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.fila1,
+.fila2 {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.col-der {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.gallery picture,
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cta1 h2,
+.cta2 h2 {
+  font-size: 3rem;
+  max-width: 17rem;
+}
+
+.cta2 {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 3rem 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cta2 p {
+  color: var(--white);
+  line-height: 1.5;
+  max-width: 32ch;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 767px) {
+  .fila1 picture:first-child {
+    order: 1;
+  }
+
+  .cta1 {
+    order: 2;
+  }
+
+  .fila1 picture:last-child {
+    order: 3;
+  }
+
+  .fila2 picture:first-child {
+    order: 4;
+  }
+
+  .cta2 {
+    order: 5;
+  }
+}
+
+/* ------------------------ FOOTER ------------------------ */
+
+.footer {
+  width: 100%;
+  padding-block: 3rem;
+}
+
+.footer--dark {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.footer--light {
+  background-color: var(--gold);
+  color: var(--black);
+}
+
+.footer__inner {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: var(--padding-mobile);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.footer .social-media {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+/* ------------------------ LOCATION ------------------------ */
+
+.back {
+  padding-block: 2rem;
+}
+
+.map-container {
+  position: relative;
+}
+
+.map-container img {
+  width: 100%;
+}
+
+.map-marker {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.location-info {
+  padding-block: 3rem;
+}
+
+/* ------------------------ TABLET ------------------------ */
+
+@media (min-width: 768px) {
+
+  .hero {
+    max-width: 750px;
+    gap: 0.5rem;
+    position: relative;
+    min-height: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    background-image: url('../img/landing.png');
+    background-size: contain;
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+
+  .landing {
+    display: none;
+  }
+
+  .hero > *:not(.landing) {
+    position: relative;
+    z-index: 2;
+    max-width: 320px;
+    margin-left: auto;
+  }
+
+  .hero h1 {
+    margin-bottom: 1rem;
+    align-items: flex-starts;
+  }
+
+  .hero p {
+    margin-bottom: 1.5rem;
+  }
+
+  .gallery {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+
+  .fila1 {
+    grid-template-columns: 40% 60%;
+    gap: 0.5rem;
+  }
+
+  .fila2 {
+    grid-template-columns: 55% 45%;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+
+  .col-der {
+    grid-template-rows: auto auto;
+    gap: 0.5rem;
+  }
+
+  h2 {
+    margin-top: 35px;
+    font-size: 3.2rem;
+    max-width: 220px;
+  }
+
+  .gallery p {
+    margin-top: 25px;
+    max-width: 250px;
+    font-size: 1.2rem;
+  }
+
+  .cta2 p {
+    margin-bottom: 55px;
+    max-width: 220px;
+  }
+
+  .footer__inner {
+    max-width: 650px;
+    margin-inline: auto;
+    padding: 0;
+    grid-template-columns: 1fr 3fr 1fr;
+    align-items: start;
+  }
+
+  .footer__inner > * {
+    justify-self: start;
+  }
+
+  .footer__inner h3 {
+    font-size: 1.5rem;
+    max-width: 16rem;
+  }
+
+  .footer__inner p {
+    font-size: 1rem;
+    max-width: 17rem;
+  }
+
+  .footer .social-media {
+    justify-self: end;
+  }
+}
+
+/* ------------------------ DESKTOP ------------------------ */
+
+@media (min-width: 1200px) {
+
+  main > section:not(.hero) {
+    padding-inline: var(--padding-desktop);
+  }
+
+  .gallery {
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+
+  .landing {
+    display: none;
+  }
+
+  .hero {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding-inline: 0;
+    padding-block: 0;
+    position: relative;
+    min-height: 1200px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    align-items: start;
+    background-image: url('../img/landing.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 33%;
+    height: 100%;
+    background: var(--black);
+    z-index: 1;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 33%;
+    height: 100%;
+    background: var(--white);
+    z-index: 1;
+  }
+
+  .hero h1 {
+    grid-column: 1;
+    z-index: 2;
+    color: var(--white);
+    font-size: 7rem;
+    max-width: 780px;
+    min-width: 700px;
+    position: relative;
+    left: -6.5rem;
+    top: 18rem;
+    margin: 0;
+    padding-inline: 0;
+  }
+
+  .hero-content-right {
+    grid-column: 2;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    left: -25rem;
+    top: 17rem;
+  }
+
+  .hero-content-right p {
+    font-size: 2rem;
+    font-weight: 300;
+    min-width: 500px;
+  }
+
+  .hero-content-right .btn {
+    align-self: flex-start;
+  }
+
+  .hero-content-right .btn__text {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  .fila1 {
+    grid-template-columns: 40% 60%;
+  }
+
+  .fila2 {
+    grid-template-columns: 60% 40%;
+    align-items: stretch;
+  }
+
+  .col-der {
+    grid-template-rows: auto auto;
+  }
+
+  .cta1 h2,
+  .cta2 h2 {
+    font-size: 3.5rem;
+    max-width: 300px;
+  }
+
+  .cta1 p,
+  .cta2 p {
+    font-size: 1.2rem;
+    max-width: 42ch;
+    font-weight: 300;
+  }
+
+  .cta2 {
+    padding: 5rem 3rem;
+    gap: 1rem;
+  }
+
+  .footer__inner {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: var(--padding-desktop);
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    align-items: start;
+  }
+
+  .footer__inner > * {
+    justify-self: start;
+  }
+
+  .footer__inner h3 {
+    font-size: 1.75rem;
+  }
+
+  .footer__inner p {
+    font-weight: 300;
+    font-size: 0.95rem;
+    max-width: 23rem;
+  }
+
+  .footer .social-media {
+    justify-self: end;
+  }
+}
+
+/* ------------------------------------ LOCATION PAGE ---------------------------------- */
+
+main > section.back,
+main > section.map {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+main {
+  position: relative;
+}
+
+/* ------------------------ MAPA ------------------------ */
+
+.map,
+.map-container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.map-container img:first-child {
+  width: 100%;
+  height: 80vh;
+  object-fit: cover;
+  display: block;
+}
+
+.map-marker {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 54%;
+  left: 49.7%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* ------------------------ INFO SECTION ------------------------ */
+
+.info {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 3rem 1.5rem;
+}
+
+.info h1 {
+  font-size: 3rem;
+  line-height: 0.9;
+  margin-bottom: 2rem;
+}
+
+.info-right h2 {
+  font-size: 2rem;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+.info-right .address {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.info-right .description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 40ch;
+}
+
+/* ------------------------ FOOTER ------------------------ */
+
+.footer--light .social-media img {
+  filter: brightness(0);
+}
+
+.footer--dark .social-media img {
+  filter: brightness(100);
+}
+
+/* ------------------------ TABLET ------------------------ */
+
+@media (min-width: 768px) {
+
+  .back {
+    left: 3rem;
+  }
+
+  .map-marker {
+    width: 60px;
+    height: 60px;
+  }
+
+  .info {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    gap: 2rem 4rem;
+  }
+
+  .info h1 {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 4rem;
+    max-width: 10ch;
+    margin: 0;
+  }
+
+  .info-right {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .info-right h2 {
+    font-size: 2.4rem;
+    max-width: 15rem;
+    margin: 0;
+  }
+
+  .info-right .address {
+    font-size: 1.3rem;
+    margin: 0;
+  }
+
+  .info-right .description {
+    font-size: 1.2rem;
+    max-width: 34ch;
+    margin: 0;
+  }
+}
+
+/* ------------------------ DESKTOP ------------------------ */
+
+@media (min-width: 1200px) {
+
+  .back {
+    left: 4rem;
+  }
+
+  .map-marker {
+    width: 80px;
+    height: 80px;
+  }
+
+  .info {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    gap: 2rem 5rem;
+    padding: 7rem var(--padding-desktop);
+  }
+
+  .info h1 {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 6rem;
+    max-width: 9ch;
+    margin: 0;
+  }
+
+  .info-right {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .info-right h2 {
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  .info-right .address {
+    font-size: 1.4rem;
+    margin: 0;
+  }
+
+  .info-right .description {
+    font-size: 1.25rem;
+    max-width: 40ch;
+    margin: 0;
+  }
+}
