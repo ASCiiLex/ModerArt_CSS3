@@ -292,9 +292,7 @@ body {
 
 /* ------------------------ GENERAL ------------------------ */
 
-main > section:not(.hero) {
-  padding-inline: var(--padding-mobile);
-}
+
 
 h1, h2, h3 {
   font-family: 'Big Shoulders Display', sans-serif;
@@ -835,6 +833,11 @@ main {
   padding: 3rem 1.5rem;
 }
 
+.info-inner {
+  max-width: 1110px;
+  margin-inline: auto;
+}
+
 .info h1 {
   font-size: 3rem;
   line-height: 0.9;
@@ -858,6 +861,7 @@ main {
   line-height: 1.6;
   max-width: 40ch;
 }
+
 
 /* ------------------------ FOOTER ------------------------ */
 
@@ -883,6 +887,12 @@ main {
   }
 
   .info {
+    padding: 5rem var(--padding-tablet);
+  }
+
+  .info-inner {
+    max-width: 750px;
+    margin-inline: auto;
     display: grid;
     grid-template-columns: 30% 70%;
     gap: 2rem 4rem;
@@ -920,7 +930,9 @@ main {
     max-width: 34ch;
     margin: 0;
   }
+
 }
+
 
 /* ------------------------ DESKTOP ------------------------ */
 
@@ -936,10 +948,13 @@ main {
   }
 
   .info {
+    padding: 7rem var(--padding-desktop);
+  }
+
+  .info-inner {
     display: grid;
     grid-template-columns: 30% 70%;
     gap: 2rem 5rem;
-    padding: 7rem var(--padding-desktop);
   }
 
   .info h1 {
@@ -961,6 +976,7 @@ main {
   .info-right h2 {
     font-size: 3rem;
     margin: 0;
+    max-width: 36ch;
   }
 
   .info-right .address {
@@ -969,8 +985,9 @@ main {
   }
 
   .info-right .description {
-    font-size: 1.25rem;
-    max-width: 40ch;
+    font-size: 1.7rem;
+    max-width: 36ch;
     margin: 0;
   }
+
 }
