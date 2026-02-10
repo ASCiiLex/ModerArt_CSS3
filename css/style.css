@@ -933,9 +933,7 @@ main {
 
 }
 
-
 /* ------------------------ DESKTOP ------------------------ */
-
 @media (min-width: 1200px) {
 
   .back {
@@ -947,11 +945,14 @@ main {
     height: 80px;
   }
 
+  /* INFO DESKTOP */
   .info {
     padding: 7rem var(--padding-desktop);
   }
 
   .info-inner {
+    max-width: 1110px;
+    margin-inline: auto;
     display: grid;
     grid-template-columns: 30% 70%;
     gap: 2rem 5rem;
